@@ -34,4 +34,14 @@ public class Test {
 		return array;
 	}
 
+	private static List<Integer> pushZeroToLast2(List<Integer> array) {
+
+		array.stream().filter(e -> e == 0).forEach((e) -> {
+			array.remove(e);
+			array.add(0);
+		});
+
+		return array;
+	}
+
 }
