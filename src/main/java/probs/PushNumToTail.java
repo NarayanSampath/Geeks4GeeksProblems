@@ -4,7 +4,7 @@ import java.util.Arrays;
 import java.util.ArrayList;
 class HelloWorld {
     public static void main(String[] args) {
-        System.out.println("new arrayList = "+pushZeroToLast(Arrays.asList(4,0,1,0,6)));
+        System.out.println("new arrayList = "+pushZeroToLast(new ArrayList(Arrays.asList(4,0,1,0,6))));
     }
   private static List<Integer> pushZeroToLast(List<Integer> array){
     List<Integer> newArrayList = new ArrayList<>();
@@ -20,4 +20,14 @@ class HelloWorld {
       }
     return newArrayList;
    }
+    private static List<Integer> pushZeroToLast1(List<Integer> array){
+      for(int i=0;i<array.size();i++){
+        if(array.get(i)==0){
+              array.remove(i);
+              array.add(0);
+        }
+      }
+    return array;
+   }
+
 }
